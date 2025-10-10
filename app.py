@@ -15,9 +15,7 @@ import zipfile
 st.set_page_config(layout="centered")
 col1, col2, col3 = st.columns([1, 2, 1])
 with col2:
-    st.image("logo.webp", width=200)
-
-st.title("PHN Scholar Exam OMR Generation Software")
+    st.image("logo.png", width=200)
 
 st.title("PHN Scholar Exam OMR Generation Software")
 
