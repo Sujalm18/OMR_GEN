@@ -90,7 +90,7 @@ if uploaded_file:
     # Placeholders for 100% label and progress bar
     percent_labels = st.empty()
     progress_bar = st.empty()
-    cols = percent_labels.columns([15, 1])  # Rightmost column is for "100%"
+    cols = percent_labels.columns([10, 1])  # Rightmost column is for "100%"
     with cols[1]:
         st.write("100%")
     pb = progress_bar.progress(0)
