@@ -91,7 +91,7 @@ if uploaded_file:
     progress_row = st.empty()
     with progress_row.container():
         cols = st.columns([3, 20])
-        cols[0].write("Progress Bar")
+        cols[0].write("Progress")
         progress_bar = cols[1].progress(0)
 
     progress_bar.progress(10)
