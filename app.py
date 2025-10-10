@@ -12,8 +12,7 @@ import tempfile
 import zipfile
 
 # Center the company logo
-st.image("logo.jpg", width=100, use_column_width=False)
-
+st.image("logo.webp", width=200, use_container_width=False)
 st.title("PHN Scholar Exam OMR Generation Software")
 
 ROLL_X_CM_30 = [7.20, 7.82, 8.44, 9.06, 9.68]
