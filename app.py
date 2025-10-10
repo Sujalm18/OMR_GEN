@@ -1,3 +1,4 @@
+st.set_page_config(layout="centered")
 import streamlit as st
 import os
 import re
@@ -12,16 +13,11 @@ import tempfile
 import zipfile
 
 # Centered logo using markdown+HTML flexbox
-col1, col2, col3 = st.columns([1, 2, 1])  # Wider middle column for centering
-
-with col1:
-    st.write("                 ")  # Empty placeholder
-
+col1, col2, col3 = st.columns([1, 2, 1])
 with col2:
-    st.image("logo.png", width=200)
+    st.image("logo.webp", width=200)
 
-with col3:
-    st.write("")  # Empty placeholder
+st.title("PHN Scholar Exam OMR Generation Software")
 
 st.title("PHN Scholar Exam OMR Generation Software")
 
