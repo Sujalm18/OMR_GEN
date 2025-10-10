@@ -15,7 +15,7 @@ import zipfile
 st.markdown(
     """
     <div style='display: flex; justify-content: center;'>
-        <img src='logo.webp' width='200'>
+        <img src='logo.png' width='200'>
     </div>
     """,
     unsafe_allow_html=True
