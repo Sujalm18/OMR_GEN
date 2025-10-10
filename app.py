@@ -12,14 +12,7 @@ import tempfile
 import zipfile
 
 # Center the company logo
-st.markdown(
-    """
-    <div style='text-align: center;'>
-        <img src='logo.jpg' width='200'>
-    </div>
-    """,
-    unsafe_allow_html=True
-)
+st.image("logo.jpg", width=200, use_column_width=False)
 
 st.title("PHN Scholar Exam OMR Generation Software")
 
