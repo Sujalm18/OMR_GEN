@@ -12,7 +12,6 @@ import tempfile
 import zipfile
 import time
 
-# Centered logo setup
 st.set_page_config(layout="centered")
 col1, col2, col3 = st.columns([1, 0.5, 1])
 with col2:
@@ -88,7 +87,7 @@ def create_zip_of_pdfs(pdf_dir, zip_filename):
 
 uploaded_file = st.file_uploader("Upload Excel file", type=["xls", "xlsx"])
 if uploaded_file:
-    # Show 0% and 100% labels for progress bar
+    # Show labels only once a file is uploaded
     col_left, col_center, col_right = st.columns([2, 16, 2])
     with col_left:
         st.write("0%")
