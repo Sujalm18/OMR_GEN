@@ -12,11 +12,10 @@ import tempfile
 import zipfile
 
 # Centered logo
-col1, col2, col3 = st.columns([6, 20, 6])   # Makes center column much wider
-
-with col2:
-    st.image("logo.png", width=200)
-
+st.markdown(
+    "<p style='text-align: center;'><img src='logo.png' width='200'></p>",
+    unsafe_allow_html=True
+)
 st.title("PHN Scholar Exam OMR Generation Software")
 
 ROLL_X_CM_30 = [7.20, 7.82, 8.44, 9.06, 9.68]
