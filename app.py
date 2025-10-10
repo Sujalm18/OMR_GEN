@@ -15,7 +15,7 @@ import zipfile
 col1, col2, col3 = st.columns([1, 2, 1])  # middle column wider
 
 with col2:
-    st.image("logo.jpg", width=200, use_container_width=False)
+    st.image("logo.png", width=200, use_container_width=False)
 
 st.title("PHN Scholar Exam OMR Generation Software")
 
