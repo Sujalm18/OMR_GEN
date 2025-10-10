@@ -15,7 +15,7 @@ import zipfile
 col1, col2, col3 = st.columns([1, 2, 1])  # Wider middle column for centering
 
 with col1:
-    st.write("")  # Empty placeholder
+    st.write("                 ")  # Empty placeholder
 
 with col2:
     st.image("logo.png", width=200)
