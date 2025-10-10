@@ -16,7 +16,7 @@ st.set_page_config(layout="centered")
 col1, col2, col3 = st.columns([1, 0.5, 1])
 with col2:
     st.image("logo.png", width=200)
-st.title("PHN Scholar Exam OMR Generation Software")
+st.title("PHN Scholar Exam OMR Generation")
 
 ROLL_X_CM_30 = [7.20, 7.82, 8.44, 9.06, 9.68]
 BUBBLE_Y_TOP_CM_30 = [18.8] * 5
