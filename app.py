@@ -12,7 +12,7 @@ import tempfile
 import zipfile
 
 # Center the company logo
-st.image("logo.jpg", width=200, use_column_width=False)
+st.image("logo.jpg", width=100, use_column_width=False)
 
 st.title("PHN Scholar Exam OMR Generation Software")
 
