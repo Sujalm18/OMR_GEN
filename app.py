@@ -89,7 +89,7 @@ uploaded_file = st.file_uploader("Upload Excel file", type=["xls", "xlsx"])
 if uploaded_file:
     percent_labels = st.empty()
     progress_bar = st.empty()
-    cols = percent_labels.columns([2, 16, 2])
+    cols = percent_labels.columns([1, 16, 1])
     with cols[0]:
         st.write("0%")
     with cols[2]:
