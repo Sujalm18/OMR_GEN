@@ -11,9 +11,9 @@ from reportlab.platypus import Table, TableStyle
 import tempfile
 import zipfile
 
-# Centered logo using markdown+HTML flexbox
-st.set_page_config(layout="centered")
-col1, col2, col3 = st.columns([1, 2, 1])
+# Centered logo
+col1, col2, col3 = st.columns([6, 20, 6])   # Makes center column much wider
+
 with col2:
     st.image("logo.png", width=200)
 
