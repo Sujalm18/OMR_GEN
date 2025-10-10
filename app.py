@@ -1,14 +1,4 @@
 import streamlit as st
-st.markdown(
-    """
-    <div style='text-align: center;'>
-        <img src='logo.webp' width='200'>
-    </div>
-    """,
-    unsafe_allow_html=True
-)
-
-st.title("PHN Scholar Exam OMR Generation Software")
 import os
 import re
 import pandas as pd
@@ -20,6 +10,18 @@ from reportlab.lib.utils import ImageReader
 from reportlab.platypus import Table, TableStyle
 import tempfile
 import zipfile
+
+# Center the company logo
+st.markdown(
+    """
+    <div style='text-align: center;'>
+        <img src='logo.webp' width='200'>
+    </div>
+    """,
+    unsafe_allow_html=True
+)
+
+st.title("PHN Scholar Exam OMR Generation Software")
 
 ROLL_X_CM_30 = [7.20, 7.82, 8.44, 9.06, 9.68]
 BUBBLE_Y_TOP_CM_30 = [18.8] * 5
@@ -87,8 +89,6 @@ def create_zip_of_pdfs(pdf_dir, zip_filename):
                     file_path = os.path.join(foldername, filename)
                     arcname = os.path.relpath(file_path, pdf_dir)
                     zipf.write(file_path, arcname)
-
-st.title("Class-wise OMR PDF Generator")
 
 uploaded_file = st.file_uploader("Upload Excel file", type=["xls", "xlsx"])
 if uploaded_file:
@@ -210,3 +210,4 @@ if uploaded_file:
                     file_name="OMR_Classwise_PDFs.zip",
                     mime="application/zip"
                 )
+
