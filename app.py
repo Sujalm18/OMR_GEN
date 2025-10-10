@@ -88,7 +88,14 @@ def create_zip_of_pdfs(pdf_dir, zip_filename):
 
 uploaded_file = st.file_uploader("Upload Excel file", type=["xls", "xlsx"])
 if uploaded_file:
+    # Show 0% and 100% labels for progress bar
+    col_left, col_center, col_right = st.columns([2, 16, 2])
+    with col_left:
+        st.write("0%")
+    with col_right:
+        st.write("100%")
     progress_bar = st.progress(0)
+
     # Phase 1: Setup temp directory
     progress_bar.progress(10)
 
