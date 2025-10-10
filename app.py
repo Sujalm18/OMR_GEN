@@ -87,11 +87,12 @@ def create_zip_of_pdfs(pdf_dir, zip_filename):
 
 uploaded_file = st.file_uploader("Upload Excel file", type=["xls", "xlsx"])
 if uploaded_file:
-    cols = st.columns([3, 20])  # Left label, right progress bar
-    with cols[0]:
-        st.write("Progress Bar")
-    with cols[1]:
-        progress_bar = st.progress(0)
+    # Show label and bar on same row
+    progress_row = st.empty()
+    with progress_row.container():
+        cols = st.columns([3, 20])
+        cols[0].write("Progress Bar")
+        progress_bar = cols[1].progress(0)
 
     progress_bar.progress(10)
 
@@ -109,7 +110,7 @@ if uploaded_file:
             progress_bar.progress(40)
         except Exception as e:
             st.error(f"Cannot read Excel file: {e}")
-            progress_bar.empty()
+            progress_row.empty()
             st.stop()
 
         done_sheets = 0
@@ -215,7 +216,7 @@ if uploaded_file:
         create_zip_of_pdfs(output_dir, zip_path)
         progress_bar.progress(100)
         time.sleep(0.2)
-        progress_bar.empty()
+        progress_row.empty()  # Remove both label and bar
 
         with open(zip_path, "rb") as f:
             st.success("Done! Download the ZIP below.")
