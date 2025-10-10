@@ -2,7 +2,7 @@ import streamlit as st
 st.markdown(
     """
     <div style='text-align: center;'>
-        <img src='logo.png' width='200'>
+        <img src='logo.webp' width='200'>
     </div>
     """,
     unsafe_allow_html=True
