@@ -1,5 +1,5 @@
 import streamlit as st
-st.image("logo.png", width=200)  # Adjust width as needed
+st.image("logo.webp", width=200)  # Adjust width as needed
 import os
 import re
 import pandas as pd
