@@ -18,7 +18,7 @@ with col1:
     st.write("")  # Empty placeholder
 
 with col2:
-    st.image("logo.webp", width=200)
+    st.image("logo.png", width=200)
 
 with col3:
     st.write("")  # Empty placeholder
