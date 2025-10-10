@@ -87,16 +87,15 @@ def create_zip_of_pdfs(pdf_dir, zip_filename):
 
 uploaded_file = st.file_uploader("Upload Excel file", type=["xls", "xlsx"])
 if uploaded_file:
+    # Placeholders for 100% label and progress bar
     percent_labels = st.empty()
     progress_bar = st.empty()
-    cols = percent_labels.columns([2, 16, 2])
-    with cols[0]:
-        st.write("0%")
-    with cols[2]:
+    cols = percent_labels.columns([15, 1])  # Rightmost column is for "100%"
+    with cols[1]:
         st.write("100%")
     pb = progress_bar.progress(0)
 
-    pb.progress(10)
+    pb.progress(10)  # Setup temp directory
 
     with tempfile.TemporaryDirectory() as tmpdir:
         xls_path = os.path.join(tmpdir, uploaded_file.name)
