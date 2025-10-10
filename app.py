@@ -11,11 +11,15 @@ from reportlab.platypus import Table, TableStyle
 import tempfile
 import zipfile
 
-# Center the company logo
-col1, col2, col3 = st.columns([1, 2, 1])  # middle column wider
-
-with col2:
-    st.image("logo.png", width=200, use_container_width=False)
+# Centered logo using markdown+HTML flexbox
+st.markdown(
+    """
+    <div style='display: flex; justify-content: center;'>
+        <img src='logo.webp' width='200'>
+    </div>
+    """,
+    unsafe_allow_html=True
+)
 
 st.title("PHN Scholar Exam OMR Generation Software")
 
@@ -206,4 +210,3 @@ if uploaded_file:
                     file_name="OMR_Classwise_PDFs.zip",
                     mime="application/zip"
                 )
-
