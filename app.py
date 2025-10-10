@@ -15,7 +15,7 @@ import zipfile
 st.markdown(
     """
     <div style='text-align: center;'>
-        <img src='logo.webp' width='200'>
+        <img src='logo.jpg' width='200'>
     </div>
     """,
     unsafe_allow_html=True
