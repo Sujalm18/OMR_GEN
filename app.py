@@ -1,4 +1,3 @@
-st.set_page_config(layout="centered")
 import streamlit as st
 import os
 import re
@@ -13,6 +12,7 @@ import tempfile
 import zipfile
 
 # Centered logo using markdown+HTML flexbox
+st.set_page_config(layout="centered")
 col1, col2, col3 = st.columns([1, 2, 1])
 with col2:
     st.image("logo.webp", width=200)
