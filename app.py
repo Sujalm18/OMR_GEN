@@ -87,33 +87,33 @@ def create_zip_of_pdfs(pdf_dir, zip_filename):
 
 uploaded_file = st.file_uploader("Upload Excel file", type=["xls", "xlsx"])
 if uploaded_file:
-    # Show labels only once a file is uploaded
-    col_left, col_center, col_right = st.columns([2, 16, 2])
-    with col_left:
+    percent_labels = st.empty()
+    progress_bar = st.empty()
+    cols = percent_labels.columns([2, 16, 2])
+    with cols[0]:
         st.write("0%")
-    with col_right:
+    with cols[2]:
         st.write("100%")
-    progress_bar = st.progress(0)
+    pb = progress_bar.progress(0)
 
-    # Phase 1: Setup temp directory
-    progress_bar.progress(10)
+    pb.progress(10)
 
     with tempfile.TemporaryDirectory() as tmpdir:
         xls_path = os.path.join(tmpdir, uploaded_file.name)
         with open(xls_path, "wb") as f:
             f.write(uploaded_file.getbuffer())
-        progress_bar.progress(20)
-
+        pb.progress(20)
         output_dir = os.path.join(tmpdir, "Generated_OMRs")
         os.makedirs(output_dir, exist_ok=True)
-        progress_bar.progress(30)
+        pb.progress(30)
 
         try:
             xls = pd.ExcelFile(xls_path)
-            progress_bar.progress(40)
+            pb.progress(40)
         except Exception as e:
             st.error(f"Cannot read Excel file: {e}")
-            progress_bar.empty()
+            pb.empty()
+            percent_labels.empty()
             st.stop()
 
         done_sheets = 0
@@ -212,15 +212,15 @@ if uploaded_file:
 
             done_sheets += 1
             progress = 40 + int((done_sheets / len(xls.sheet_names)) * 50)
-            progress_bar.progress(progress)
+            pb.progress(progress)
 
-        # Zipping phase
-        progress_bar.progress(90)
+        pb.progress(90)
         zip_path = os.path.join(tmpdir, "OMR_Classwise_PDFs.zip")
         create_zip_of_pdfs(output_dir, zip_path)
-        progress_bar.progress(100)
-        time.sleep(0.2)  # Brief pause so users can see 100%
-        progress_bar.empty()
+        pb.progress(100)
+        time.sleep(0.2)
+        pb.empty()
+        percent_labels.empty()
 
         with open(zip_path, "rb") as f:
             st.success("Done! Download the ZIP below.")
