@@ -1,7 +1,7 @@
 import streamlit as st
 st.set_page_config(layout="centered")  # Ensures best possible centering
 
-col1, col2, col3 = st.columns([1, 15, 1])  # Wide middle column
+col1, col2, col3 = st.columns([1, 2, 1])  # Wide middle column
 
 with col2:
     st.image("logo.png", width=200)
