@@ -12,14 +12,16 @@ import tempfile
 import zipfile
 
 # Centered logo using markdown+HTML flexbox
-st.markdown(
-    """
-    <div style='display: flex; justify-content: center;'>
-        <img src='logo.png' width='200'>
-    </div>
-    """,
-    unsafe_allow_html=True
-)
+col1, col2, col3 = st.columns([1, 2, 1])  # Wider middle column for centering
+
+with col1:
+    st.write("")  # Empty placeholder
+
+with col2:
+    st.image("logo.webp", width=200)
+
+with col3:
+    st.write("")  # Empty placeholder
 
 st.title("PHN Scholar Exam OMR Generation Software")
 
