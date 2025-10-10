@@ -90,7 +90,7 @@ if uploaded_file:
     # Show label and bar on same row
     progress_row = st.empty()
     with progress_row.container():
-        cols = st.columns([2, 20])
+        cols = st.columns([4, 20])
         cols[0].write("Generating..")
         progress_bar = cols[1].progress(0)
 
