@@ -1,5 +1,14 @@
 import streamlit as st
-st.image("logo.webp", width=200)  # Adjust width as needed
+st.markdown(
+    """
+    <div style='text-align: center;'>
+        <img src='logo.png' width='200'>
+    </div>
+    """,
+    unsafe_allow_html=True
+)
+
+st.title("PHN Scholar Exam OMR Generation Software")
 import os
 import re
 import pandas as pd
